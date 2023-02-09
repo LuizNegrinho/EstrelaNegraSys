@@ -8,8 +8,12 @@ namespace EstrelaNegra.API.Mappings
     {
         public EntitiesToDTOMappingProfile()
         {
-            CreateMap<Equine, HorseMonitorDTO>();
-            CreateMap<IEnumerable<Equine>, IEnumerable<DropDownDTO>>();
+            CreateMap<Equine, HorseDTO>();
+            CreateMap<IEnumerable<Equine>, IEnumerable<DropDownDTO>>();//apagar
+            CreateMap<EquineGrowth, GrowthDTO>();
+            CreateMap<EquineHlthFlwup, HealthDTO>();
+            CreateMap<HorseMonitorModel, HorseMonitorDTO>();
+
         }
     }
 }

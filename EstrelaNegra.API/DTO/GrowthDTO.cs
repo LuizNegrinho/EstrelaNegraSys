@@ -2,16 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace EstrelaNegra.API.DTO
-{
-    [Table("EQUINE_GROWTH")]
+{    
     public class GrowthDTO
     {
-        [Key]
-        [Column("ID")]
         public int Id { get; set; }
-        [Column("HORSE_ID")]
-        public int? HorseId { get; set; }
-        [Column("ACTUAL")]
+        public int? HorseId { get; set; }       
         public int? Actual { get; set; }
         public int? M0 { get; set; }
         public int? M1 { get; set; }
@@ -51,8 +46,7 @@ namespace EstrelaNegra.API.DTO
         public int? M35 { get; set; }
         public int? M36 { get; set; }
         public int? M48 { get; set; }
-        public int? M60 { get; set; }
-        [Column("PROJECTION")]
+        public int? M60 { get; set; }        
         public int? Projection { get; set; }
 
     }

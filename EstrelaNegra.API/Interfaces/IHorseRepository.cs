@@ -14,6 +14,7 @@ namespace EstrelaNegra.API.Interfaces
         Task<ICollection<EquineGrowth>> GetGrowth(int id);
         Task<ICollection<EquineHlthFlwup>> GetHealth(int id);
         string GetNameById(int id);
-        ICollection<DropDownDTO> GetNameList();
+        ICollection<DropDownDTO> GetNameList();        
+        HorseMonitorModel GetMonitorData(int id);
     }
 }

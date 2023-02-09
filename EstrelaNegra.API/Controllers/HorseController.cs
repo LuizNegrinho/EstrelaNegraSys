@@ -68,7 +68,7 @@ namespace EstrelaNegra.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(int id)
         {
-            var horse = await _horseApplication.GetMonitorData(id);
+            var horse = await _horseApplication.GetHorseById(id);
             if (horse == null)
                 return NotFound("Animal não encontrado");
             return Ok(horse);
@@ -81,14 +81,33 @@ namespace EstrelaNegra.API.Controllers
             return Ok(list);
         }
 
-        [HttpGet("queryTest/{id}")]
-        public async Task<ActionResult> TESTE(int id)
+        [HttpGet("name/{id}")]
+        public ActionResult GetNameById(int id)
         {
             var horse = _horseRepository.GetNameById(id);
             if (horse == null)
                 return NotFound("Animal não encontrado");
             return Ok(horse);
         }
+
+        [HttpGet("growth/{id}")]
+        public async Task<ActionResult> GetGrowthById(int id)
+        {
+            var growth = await _horseRepository.GetGrowth(id);
+            if (growth == null)
+                return NotFound("Animal não encontrado");
+            return Ok(growth);
+        }
+
+        [HttpGet("monitor/{id}")]
+        public IActionResult GetMonitorData(int id)
+        {
+            var horse = _horseApplication.GetMonitorData(id);
+            if (horse == null)
+                return NotFound("Animal não encontrado");
+            return Ok(horse);
+        }
+
     }
     
 }
