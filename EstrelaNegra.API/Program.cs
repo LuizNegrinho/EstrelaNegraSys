@@ -1,4 +1,5 @@
 using EstrelaNegra.API.Applications;
+using EstrelaNegra.API.Controllers;
 using EstrelaNegra.API.Interfaces;
 using EstrelaNegra.API.Mappings;
 using EstrelaNegra.API.Models;
@@ -18,7 +19,10 @@ builder.Services.AddDbContext<HENContext>(x => x.UseSqlServer(connectionString))
 #region Dependency Injection
 builder.Services.AddScoped<IHorseRepository, HorseRepository>();
 builder.Services.AddScoped<IHorseApplication, HorseApplication>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserApplication, UserApplication>();
 builder.Services.AddAutoMapper(typeof(EntitiesToDTOMappingProfile));
+
 
 #endregion
 
